@@ -1,0 +1,8 @@
+p {
+    /* Впливає на весь css документ а у task-3 лише на один компонент бо модульні стилі */
+    
+    /* color: blueviolet;
+    border: 1px dashed black;
+    padding: 5px;
+    border-radius: 12px; */
+}

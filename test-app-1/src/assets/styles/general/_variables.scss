@@ -1,0 +1,62 @@
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1440;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1140;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Змінні основних медіа брейкпоінтів
+// Показуємо контент беспечно для усіх ПК моніторів
+$pc-adaptive: 1250;
+// Показуємо контент беспечно для усіх планшетів
+$tablet-adaptive: 991.98;
+// Показуємо контент беспечно для усіх великих мобільних
+$huge-mobile-adaptive: 767.98;
+// Стилі для маленьких мобільних
+$small-mobile-adaptive: 479.98;
+// Стилі для Конкретного хедеру
+$custom-header-adaptive: 1250;
+:root {
+    --custom-header-adaptive: #{$custom-header-adaptive};
+}
+
+// general-border-radius
+$general-border-radius: 22px;
+// Trustpilot colors
+$Grey-20: rgb(223, 226, 229);
+$Review-text: rgb(82, 82, 82);
+$trust-pilot-text: #191919;
+
+$header-bg: #343638;
+$footer-bg: #1C1E25;
+$container-bg: #22252e;
+$main-bg: #1C1E25;
+$table-bg-1: #222631;
+$table-bg-2: #1b2438;
+$sub-header-1: #222631;
+$sub-border-1: #ffffff;
+$main-text: rgb(255, 255, 255);
+$header-text: rgb(255, 255, 255);
+$footer-text: rgb(255, 255, 255);
+
+$main-text-hover--1: #0004ee;
+$main-text-hover--2: #CB9C53;
+$main-text-hover--3: #ff9d00;
+$main-text-hover--4: #816434;
+$main-text-hover--5: #c7c7c7;
+$main-text-hover--6: #fee61d;
+
+$placeholder-text: rgb(170, 170, 170);
+$banner-highlight-span-text: #ebba35;
+// --------------------------------------
+$White-text: rgb(255, 255, 255);
+$Black-text: #000000;
+
+$Burger-button: #ffffff;
+$Close-button: #ffffff;
+$Go-top-arrow: #000000;
