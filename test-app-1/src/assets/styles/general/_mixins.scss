@@ -1,0 +1,197 @@
+%header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+// // Шаблон для футера
+// %footer {
+//     @extend %header;
+//     position: relative;
+//     bottom: 0;
+// }
+
+// Тень для контейнера
+%box-shadow {
+    box-shadow:
+        0 0 10px rgba(119, 119, 119, 0.5),
+        0 0 20px rgba(119, 119, 119, 0.4),
+        0 0 30px rgba(119, 119, 119, 0.3),
+        0 0 40px rgba(119, 119, 119, 0.2),
+        0 0 50px rgba(119, 119, 119, 0.1);
+}
+
+// Главний заголовок h1
+%main-title {
+    color: $main-text;
+    font-family: "main-font", sans-serif;
+    @include adaptiveValue("font-size", 34, 28);
+    font-weight: 600;
+    @include adaptiveValue("line-height", 34, 28);
+    @include adaptiveValue("margin-bottom", 25, 15);
+}
+
+// Обичний заголовок h2
+%default-title {
+    color: $main-text;
+    font-family: "main-font", sans-serif;
+    // font-size: toRem(32);
+    font-weight: 500;
+    // line-height: toRem(36);
+    @include adaptiveValue("font-size", 30, 26);
+    @include adaptiveValue("line-height", 30, 26);
+}
+
+// Обичний заголовок h3
+%sub-title {
+    color: $main-text;
+    font-family: "main-font", sans-serif;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 26, 22);
+    @include adaptiveValue("line-height", 28, 24);
+    @include adaptiveValue("margin-bottom", 10, 5);
+}
+
+// Обичний заголовок h3
+%sub-title-h3 {
+    color: $main-text;
+    font-family: "main-font", sans-serif;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 22, 18);
+    @include adaptiveValue("line-height", 24, 20);
+    @include adaptiveValue("margin-bottom", 10, 5);
+}
+
+// Абзацний обичний текст
+%default-text {
+    color: $main-text;
+    font-family: "main-font", sans-serif;
+    // @include adaptiveValue("font-size", 18, 14);
+    // font-weight: 400;
+    // @include adaptiveValue("line-height", 24, 20);
+    @include adaptiveValue("font-size", 16, 14);
+    font-weight: 400;
+    @include adaptiveValue("line-height", 20, 18);
+    word-spacing: toRem(1);
+}
+
+%default-font {
+    font-family: "main-font", sans-serif;
+}
+// Линия после заголовка
+%abzats-line {
+    &::after {
+        content: "";
+        width: 100%;
+        height: toRem(2);
+        background-color: $main-text-hover--1;
+        border-radius: toRem(1);
+    }
+}
+// міксін для стилів по замовчанню на сторінці
+@mixin default-styles {
+    html {
+        font-family:
+            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+    body {
+        // font-family: "Arial", sans-serif;
+        // font-family: "Anton", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: #101010;
+        line-height: 1.46;
+    }
+    .wrapper {
+        min-height: 100vh;
+        overflow: clip;
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper > main {
+        flex-grow: 1;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// Шаблон для популярного контейнера
+%common-container {
+    // max-width: toRem(1170);
+    // Бахнул по шире
+    max-width: toRem(1240);
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    margin: 0 auto;
+}
+
+// Шаблон для плавного підкреслення при ховері
+%smooth-underlining {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: toRem(-1);
+        left: 0;
+        width: 0%;
+        height: toRem(1);
+        background-color: $main-text;
+        transition: width 0.3s ease;
+    }
+    &:hover {
+        color: $main-text;
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+// Шаблон для плавного підкреслення при ховері
+%abs-cent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+%gradient-btn {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+}
+
+// Міксин для адаптивного зображення
+@mixin adaptive-image-settings(
+    $width: 100%,
+    $height: 100%,
+    $object-fit: cover,
+    $aspect-ratio: toRem(270) / toRem(270)
+) {
+    width: $width;
+    height: $height;
+    object-fit: $object-fit;
+    aspect-ratio: $aspect-ratio;
+}
+
+// Міксин для назви з декором попереду
+@mixin common-before-title($flex-basis: 11px, $width: 11px, $height: 11px, $bgColor: null, $borderRadius: 0px) {
+    content: "";
+    flex-basis: $flex-basis;
+    width: $width;
+    height: $height;
+    @if $bgColor != null {
+        background-color: $bgColor;
+    } @else {
+        background-color: $main-text; // Значення за замовчанням
+    }
+    border-radius: $borderRadius;
+}
