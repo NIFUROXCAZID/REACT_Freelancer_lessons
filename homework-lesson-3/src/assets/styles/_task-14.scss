@@ -1,0 +1,59 @@
+.task-14 {
+    padding: 10px;
+    background-color: rgb(241, 243, 255);
+    & h3 {
+        margin: 0;
+    }
+    &__form {
+        padding: 10px;
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    &__form-element {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        & label {
+
+        }
+        & select {
+            height: 26px;
+            font-size: 16px;
+            min-width: 180px;
+        }
+        & input {
+            margin: 0;
+            // padding: 0;
+            height: 26px;
+            font-size: 16px;
+        }
+    }
+    &__eat-lablel {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    &__btn {
+        border: 2px dashed black;
+        background-color: rgb(208, 224, 248);
+    }
+    &__list {
+    }
+
+    &__order-list {
+        border: 2px solid black;
+    }
+
+    &__order {
+    }
+    &__order-item {
+        padding: 10px;
+        & p {
+            margin-top: 0;
+        }
+    }
+}

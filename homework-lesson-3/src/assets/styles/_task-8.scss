@@ -1,0 +1,26 @@
+.task-8 {
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    &__column {
+    }
+    & h2 {
+    }
+    & select {
+        height: 36px;
+        font-size: 16px;
+        width: 200px;
+    }
+    & option {
+        height: 36px;
+        font-size: 16px;
+    }
+    & ul {
+        padding: 0;
+    }
+    & li {
+        padding: 0;
+    }
+}

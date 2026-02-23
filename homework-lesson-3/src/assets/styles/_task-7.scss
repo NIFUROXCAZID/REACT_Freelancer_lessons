@@ -1,0 +1,36 @@
+.task-7 {
+    padding: 10px;
+    // border: 2px solid black;
+    display: flex;
+    gap: 50px;
+    &__column {
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    &__col-head {
+        display: inline-flex;
+        gap: 20px;
+        justify-content: flex-start;
+        align-items: center;
+        & input {
+            min-width: 220px;
+            height: 36px;
+            font-size: 20px;
+        }
+    }
+
+    &__body {
+        & ul {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__searched {
+        min-width: 220px;
+        height: 36px;
+        font-size: 20px;
+        border: 1px solid black;
+    }
+}

@@ -1,0 +1,46 @@
+.task-3 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &__allowed {
+        height: 35px;
+        font-size: 22px;
+    }
+    &__current {
+        height: 35px;
+        font-size: 22px;
+        &--default {
+            background-color: rgb(225, 231, 241);
+        }
+        &--orange {
+            background-color: orange;
+        }
+        &--green {
+            background-color: green;
+        }
+        &--red {
+            background-color: red;
+        }
+    }
+    & p {
+        font-size: 40px;
+        color: red;
+        margin: 0;
+        opacity: 0;
+    }
+    &__attention {
+        animation: blink 2s infinite;
+    }
+    @keyframes blink {
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+        25%,
+        75% {
+            opacity: 0;
+        }
+    }
+}

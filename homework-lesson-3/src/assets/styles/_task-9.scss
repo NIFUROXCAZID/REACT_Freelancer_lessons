@@ -1,0 +1,29 @@
+.task-9 {
+
+    &__columns {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 50px;
+        & ul {
+            padding: 15px;
+            margin: 0;
+            border: 3px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        & li {
+            height: 36px;
+            font-size: 20px;
+            padding: 8px;
+            border: 2px solid black;
+        }
+    }
+    &__red {
+        border: 2px solid rgb(255, 0, 0) !important;
+    }
+    &__blue {
+        border: 2px solid rgb(0, 102, 255) !important;
+    }
+}

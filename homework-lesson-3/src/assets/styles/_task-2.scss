@@ -1,0 +1,33 @@
+.task-1 {
+    $default: rgb(202, 200, 200);
+    $white: white;
+    $blue: blue;
+    $green: green;
+    $red: red;
+
+    &--default {
+        background-color: $default;
+    }
+    &--white {
+        background-color: $white;
+    }
+    &--blue {
+        background-color: $blue;
+    }
+    &--green {
+        background-color: $green;
+    }
+    &--red {
+        background-color: $red;
+    }
+
+    padding: 20px;
+    width: 700px;
+    height: 250px;
+
+    &__input {
+        height: 36px;
+        width: 300px;
+        font-size: 20px;
+    }
+}
