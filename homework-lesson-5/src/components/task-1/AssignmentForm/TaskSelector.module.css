@@ -1,0 +1,10 @@
+.tasList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
