@@ -1,1 +1,0 @@
-export { default } from './task-3'
