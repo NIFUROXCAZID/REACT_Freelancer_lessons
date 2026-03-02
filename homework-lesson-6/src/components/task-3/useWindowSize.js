@@ -21,14 +21,15 @@ function useWindowSize() {
 
     let src = ""
     if (width > 1280) {
-        src = "/public/img/pc.png"
+        src = "/img/pc.png"
     } else if (width > 968) {
-        src = "/public/img/tablet.png"
+        src = "/img/tablet.png"
     } else {
-        src = "/public/img/phone.png"
+        src = "/img/phone.png"
     }
 
     return { width, height, src }
 }
+
 
 export default useWindowSize
