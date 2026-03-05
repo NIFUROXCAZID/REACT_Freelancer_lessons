@@ -1,5 +1,5 @@
 // це маршрути бекенду (API)
-const backendUrl = 'http://localhost:5000/api'
+const backendUrl = 'https://react-freelancer-lessons.onrender.com/api'
 // Це обєкти url потім впишем потрібні
 export default {
     // getProductsByCategory: (category) => `${backendUrl}/products?category=${category}`,
@@ -9,3 +9,4 @@ export default {
     // getProductById: (id) => `${backendUrl}/products/${id}`,
     // getDeleteProductLink: (id) => `${backendUrl}/products/${id}`,
 }
+
