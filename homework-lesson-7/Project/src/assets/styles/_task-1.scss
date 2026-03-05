@@ -1,0 +1,152 @@
+#root {
+  width: 100%;
+    max-width: 100%;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    padding: 26px;
+    background-color: rgb(235, 235, 255);
+    border-radius: 12px;
+   
+    width: 100%;
+    max-width: 1200px;
+}
+.header {
+}
+.main {
+}
+.footer {
+    background-color: rgb(167, 167, 207);
+    padding: 10px;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+}
+.navigation {
+    & ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+    & li {
+        
+    }
+}
+.nav-link {
+    font-size: 28px;
+    &--active {
+        color: rgb(150, 0, 0);
+    }
+    &:hover {
+        color: red;
+    }
+}
+.home {
+}
+.shop {
+    & ul {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 18px;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    & li {
+        font-size: 24px;
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
+    }
+}
+.rules {
+}
+.contacts {
+}
+.page-404 {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(42, 80, 207);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.data-is-loading {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(92, 113, 184);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+// Продукти -----------------------------------------------
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__wrapper {
+
+    }
+    &__list {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    &__btn-home {
+        padding: 10px;
+        font-size: 28px;
+        margin: 20px 0;
+    }
+}
+.product {
+    padding: 10px;
+    border-radius: 12px;
+    background-color: rgb(197, 229, 255);
+    display: flex;
+    gap: 20px;
+    &__img-wrap {
+        & img {
+            max-width: 250px;
+            width: 100%;
+            max-height: 250px;
+            height: auto;
+        }
+    }
+    &__info-wrap {
+        
+    }
+    &__name {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+    &__price {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+    }
+    &__btn-home {
+        padding: 8px;
+        font-size: 18px;
+        display: block;
+        margin: 10px 0;
+    }
+    &__btn-buy {
+        padding: 8px;
+        font-size: 18px;
+        display: block;
+    }
+}

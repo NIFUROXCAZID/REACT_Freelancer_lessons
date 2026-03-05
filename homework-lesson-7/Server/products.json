@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "category": "tv",
+        "name": "Sony tv t-1",
+        "price": "700",
+        "imageUrl": "https://img.freepik.com/free-psd/stunning-mountain-landscape-displayed-modern-smart-tv_191095-80909.jpg"
+    },
+    {
+        "id": 2,
+        "category": "tv",
+        "name": "Sony tv t-2",
+        "price": "600",
+        "imageUrl": "https://www.shutterstock.com/image-photo/modern-tv-set-isolated-on-260nw-2548119265.jpg"
+    },
+    {
+        "id": 3,
+        "category": "tv",
+        "name": "Sony tv t-3",
+        "price": "550",
+        "imageUrl": "https://electronicparadise.in/cdn/shop/files/71PjEhrm8ML._SL1500.jpg?v=1707403004&width=1406"
+    },
+    {
+        "id": 4,
+        "category": "tv",
+        "name": "Sony tv t-4",
+        "price": "400",
+        "imageUrl": "https://img.freepik.com/free-psd/vintage-television-set-with-test-pattern-retro-broadcast-nostalgia_191095-78689.jpg"
+    },
+    {
+        "id": 5,
+        "category": "laptops",
+        "name": "Galaxcy laptop l-1",
+        "price": "1700",
+        "imageUrl": "https://img.freepik.com/free-photo/laptop-with-sun-background_1232-429.jpg?semt=ais_rp_progressive&w=740&q=80"
+    },
+    {
+        "id": 6,
+        "category": "laptops",
+        "name": "Galaxcy laptop l-2",
+        "price": "1900",
+        "imageUrl": "https://media.wired.com/photos/68a379057f0a507da2040dfa/master/w_1600%2Cc_limit/%2520Dell%252014%2520Premium%25207%2520Source%2520Luke%2520Larsen.png"
+    },
+    {
+        "id": 7,
+        "category": "laptops",
+        "name": "Galaxcy laptop l-3",
+        "price": "1200",
+        "imageUrl": "https://media.istockphoto.com/id/1452281128/photo/laptop-blank-screen-on-wood-table-with-coffee-cafe-background-mockup-template-for-your-text.jpg?s=612x612&w=0&k=20&c=nMGrhKIZtAXNjMCRdaS-qPNPX3cPZ9NQl2XpgKIkmFo="
+    },
+    {
+        "id": 8,
+        "category": "laptops",
+        "name": "Galaxcy laptop l-4",
+        "price": "2000",
+        "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/surface-laptop-16-9.jpg?c=16x9&q=h_720,w_1280,c_fill"
+    },
+    {
+        "id": 9,
+        "category": "phones",
+        "name": "Samsung smartphone p-1",
+        "price": "400",
+        "imageUrl": "https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?cs=srgb&dl=pexels-fotios-photos-1092644.jpg&fm=jpg"
+    },
+    {
+        "id": 10,
+        "category": "phones",
+        "name": "Samsung smartphone p-2",
+        "price": "300",
+        "imageUrl": "https://img.freepik.com/free-vector/realistic-display-smartphone-with-different-apps_52683-30241.jpg?semt=ais_rp_progressive&w=740&q=80"
+    },
+    {
+        "id": 11,
+        "category": "phones",
+        "name": "Samsung smartphone p-3",
+        "price": "900",
+        "imageUrl": "https://plus.unsplash.com/premium_photo-1661884002007-fea55e211ec7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "id": 12,
+        "category": "phones",
+        "name": "Samsung smartphone p-4",
+        "price": "150",
+        "imageUrl": "https://i.guim.co.uk/img/media/fafda794e7f84de992bc9d36260da92150c4031c/373_518_4075_2445/master/4075.jpg?width=445&dpr=1&s=none&crop=none"
+    },
+    {
+        "id": 13,
+        "category": "monitors",
+        "name": "Acer monitor m-1",
+        "price": "1000",
+        "imageUrl": "https://img.freepik.com/free-psd/stunning-mountain-landscape-displayed-modern-smart-tv_191095-80909.jpg"
+    },
+    {
+        "id": 14,
+        "category": "monitors",
+        "name": "Acer monitor m-2",
+        "price": "1400",
+        "imageUrl": "https://img.freepik.com/free-psd/stunning-mountain-landscape-displayed-modern-smart-tv_191095-80909.jpg"
+    },
+    {
+        "id": 15,
+        "category": "monitors",
+        "name": "Acer monitor m-3",
+        "price": "500",
+        "imageUrl": "https://img.freepik.com/free-psd/stunning-mountain-landscape-displayed-modern-smart-tv_191095-80909.jpg"
+    },
+    {
+        "id": 16,
+        "category": "monitors",
+        "name": "Acer monitor m-4",
+        "price": "1300",
+        "imageUrl": "https://img.freepik.com/free-psd/stunning-mountain-landscape-displayed-modern-smart-tv_191095-80909.jpg"
+    }
+]
