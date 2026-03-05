@@ -1,5 +1,5 @@
 // це маршрути бекенду (API)
-const backendUrl = 'https://react-freelancer-lessons.onrender.com/api'
+const backendUrl = import.meta.env.VITE_API_URL
 // Це обєкти url потім впишем потрібні
 export default {
     // getProductsByCategory: (category) => `${backendUrl}/products?category=${category}`,
@@ -9,4 +9,5 @@ export default {
     // getProductById: (id) => `${backendUrl}/products/${id}`,
     // getDeleteProductLink: (id) => `${backendUrl}/products/${id}`,
 }
+
 
