@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Amoga Fernan",
+    "subject": "Історія",
+    "photo": "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycmw2ZjhnNjNsNnVscWRweTdreDZjOWZvNnRlMjRvaDM3eG15OWxuOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/sn7xTldZEr0bIOt5Kk/giphy.gif"
+  },
+  {
+    "id": "2",
+    "name": "Іван Петренко",
+    "subject": "Фізика",
+    "photo": "https://cdn-icons-png.flaticon.com/512/168/168724.png"
+  },
+  {
+    "id": "3",
+    "name": "Наталія Сидорова",
+    "subject": "Історія",
+    "photo": "https://cdn-icons-png.flaticon.com/512/168/168725.png"
+  },
+  {
+    "id": 1773061558054,
+    "name": "susi teacher",
+    "subject": "Among Us",
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkURVyY6FpY9kwLFjw02la1lW3FYJUyi2q8w&s"
+  },
+  {
+    "id": 1773061621924,
+    "name": "Asmosgus",
+    "subject": "Географія",
+    "photo": "https://media.tenor.com/v0UR6fBPf_wAAAAM/among-us-cosplay.gif"
+  },
+  {
+    "id": 1773061690518,
+    "name": "Mogus Amoga",
+    "subject": "Фізкультура",
+    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5jkKmAFifE8Zq2pf6jr0JoY98kHTmWP-FGA&s"
+  }
+]

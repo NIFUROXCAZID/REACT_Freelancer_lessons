@@ -1,0 +1,20 @@
+.container {
+  color: rgb(0, 0, 0);
+  display: flex;
+  gap: 26px;
+  background-color: black;
+  padding: 25px 25px;
+}
+.link {
+  color: rgb(247, 205, 205);
+  margin: 20px;
+}
+a {
+    color: rgb(247, 205, 205);
+}
+a:hover {
+    color: rgb(179, 64, 64);
+}
+.active {
+  color: rgb(255, 0, 0);
+}

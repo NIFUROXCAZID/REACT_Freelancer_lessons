@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #a5d6a7; /* світло-зелений */
+  border-radius: 8px;
+  padding: 10px 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  font-family: sans-serif;
+}
+
+.section1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section1 img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4caf50; /* зелена рамка */
+}
+
+.section1 div > div:first-child {
+  font-weight: bold;
+  color: #388e3c; /* темно-зелений */
+  font-size: 16px;
+}
+
+.section1 div > div:last-child {
+  color: #757575; /* сірий */
+  font-size: 14px;
+}
+
+.section1 div > div:last-child::before {
+  content: 'Предмет: ';
+  font-weight: bold;
+  color: #424242;
+}
+
+.section2 {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.section2 button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 70px;
+}
+
+.section2 button:hover {
+  background-color: #388e3c;
+}
