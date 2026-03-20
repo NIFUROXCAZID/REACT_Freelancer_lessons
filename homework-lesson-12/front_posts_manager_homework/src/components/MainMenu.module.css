@@ -1,0 +1,36 @@
+.mainMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+  padding: 1.2rem 2rem;
+  border-radius: 0 0 var(--radius, 18px) var(--radius, 18px);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.menuItem {
+  color: #fff;
+  font-weight: 500;
+  margin: 0 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+.menuItem:hover,
+.menuItem.active {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fbbf24;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.08);
+}

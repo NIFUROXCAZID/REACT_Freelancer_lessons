@@ -1,0 +1,102 @@
+:root {
+  --color-bg: #f8fafc;
+  --color-bg-dark: #18181b;
+  --color-primary: #6366f1;
+  --color-primary-dark: #3730a3;
+  --color-accent: #fbbf24;
+  --color-card: #fff;
+  --color-card-dark: #23272f;
+  --color-text: #213547;
+  --color-text-dark: #e5e7eb;
+  --color-link: #6366f1;
+  --color-link-hover: #3730a3;
+  --radius: 18px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin: 1.5rem 0 1rem 0;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--color-primary);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+button:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (max-width: 900px) {
+  #root {
+    padding: 1rem;
+  }
+  .content {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  .postCard {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .mainMenu {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+  }
+  .postsList {
+    gap: 1rem;
+  }
+  .postCard {
+    padding: 1rem;
+  }
+}

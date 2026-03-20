@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.form_el {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.form_el input {
+  height: 28px;
+  font-size: 22px;
+  width: 250px;
+}
+.form_el select {
+  height: 28px;
+  font-size: 22px;
+  width: 250px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

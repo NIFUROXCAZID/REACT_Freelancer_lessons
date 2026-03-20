@@ -1,0 +1,112 @@
+/* Footer row for actions and author */
+.cardFooter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.author {
+  color: #6366f1;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+/* Main card styles */
+.postCard {
+  background: var(--color-card, #f3f4f6);
+  border-radius: var(--radius, 16px);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid #e0e7ff;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.postCard:hover {
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.16);
+  transform: translateY(-4px) scale(1.02);
+}
+.postCard:hover {
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.16);
+  transform: translateY(-4px) scale(1.02);
+}
+.postTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-dark, #3730a3);
+  margin-bottom: 0.7rem;
+  word-break: break-word;
+}
+.postBody {
+  color: #4b5563;
+  margin-bottom: 1.2rem;
+  word-break: break-word;
+}
+.actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.likeBtn,
+.dislikeBtn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+}
+.likeBtn:hover {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.08);
+}
+.dislikeBtn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+@media (max-width: 900px) {
+  .postCard {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.postForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.postForm_el {
+   display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.postForm_el label {
+
+}
+.postForm_el input {
+  height: 28px;
+  font-size: 22px;
+  width: 550px;
+}
+.postForm_el textarea {
+  /* height: 28px; */
+  font-size: 14px;
+  width: 100%;
+  min-width: 1000px;
+}
