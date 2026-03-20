@@ -10,6 +10,8 @@ const PORT = process.env.PORT || 3000
 const DATA_FILE = path.join(__dirname, 'posts.json')
 
 app.use(cors())
+app.options('*', cors())
+
 app.use(bodyParser.json())
 
 // Helper to read posts from file
