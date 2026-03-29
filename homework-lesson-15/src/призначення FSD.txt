@@ -1,0 +1,12 @@
+🔥 Супер-коротко (можеш зберегти)
+
+shared   → перевикористовуване (без бізнесу)
+entities → що це (user, product)
+features → що робить (login, like)
+widgets  → шматок UI (header, list)
+pages    → сторінка (route)
+app      → запуск і конфіг
+
+🧠 Головне правило FSD
+👉 Верхні шари використовують нижні:
+app → pages → widgets → features → entities → shared
