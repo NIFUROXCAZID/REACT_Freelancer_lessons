@@ -1,12 +1,13 @@
 export const apiRoutes = {
   auth: {
-    login: '/api/auth/login',
-    logout: '/api/auth/logout',
-    refresh: '/api/auth/refresh',
-    profile: '/api/auth/profile',
+    login: '/auth/login',
+    logout: '/auth/logout',
+    refresh: '/auth/refresh',
+    profile: '/auth/profile',
   },
-  users: '/api/users',
-  posts: '/api/posts',
-  comments: '/api/comments',
-  getCommentsByPostId: '/api/comments',
+  users: '/users',
+  posts: '/posts',
+  comments: '/comments',
+  getCommentsByPostId: '/comments',
+  //   getCommentsByPostId: (postId) => `/comments?postId=${postId}`,
 }
