@@ -19,7 +19,7 @@ app.use(
     origin: [
       'http://localhost:5173',
       'http://localhost:5174',
-      'https://react-homework-lesson-17.netlify.app', // 👈 ДОДАЙ ЦЕ
+      'https://react-homework-lesson-17.netlify.app/api/', // 👈 ДОДАЙ ЦЕ
     ],
     credentials: true,
   })
@@ -27,7 +27,7 @@ app.use(
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(delay)
+//app.use(delay)
 
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
