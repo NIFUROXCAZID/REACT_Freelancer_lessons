@@ -16,8 +16,12 @@ const app = express()
 // app.use(cors({ origin: 'http://localhost:5173/', credentials: true }))
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'], // ✅ фронтенд (Vite)
-    credentials: true, // ✅ дозвіл надсилати cookie
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:5174',
+      'https://react-homework-lesson-17.netlify.app', // 👈 ДОДАЙ ЦЕ
+    ],
+    credentials: true,
   })
 )
 
