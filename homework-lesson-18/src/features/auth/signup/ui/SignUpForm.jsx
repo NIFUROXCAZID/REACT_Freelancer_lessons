@@ -1,67 +1,69 @@
-import { useState } from 'react'
 import { useSignUp } from '../model/useSignUp'
 import { useNavigate } from 'react-router'
 import { frontRoutes } from '@/shared/config/routes/frontRoutes'
+import Input from "@/shared/ui/Input";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from 'react-i18next'
 
 export default function SignUpForm({ onSuccess }) {
-  const { t } = useTranslation()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [displayName, setDisplayName] = useState('')
-  const { signUp, isLoading, error } = useSignUp()
-  const [errorMessage, setErrorMessage] = useState('')
-  const navigate = useNavigate()
+  const { t } = useTranslation();
+  const schema = yup.object({
+    displayName: yup.string().required(t("nameRequired")).min(2, t("minTwoChar")),
+    email: yup.string().email(t("emailIncorrect")).required(t("eamailRequired")),
+    password: yup.string().required(t("passwordRequired")).min(6, t("minSixChar")),
+  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setErrorMessage('')
+  const { signUp, isLoading, error } = useSignUp();
+  const navigate = useNavigate();
+
+  const {register, handleSubmit, formState: { errors },} = useForm({resolver: yupResolver(schema), mode: "onBlur",});
+
+  const onSubmit = async (data) => {
     try {
-      await signUp({ email, password, displayName })
-      onSuccess && onSuccess()
-      navigate(frontRoutes.pages.HomePage.navigationPath)
+      await signUp(data);
+      onSuccess && onSuccess();
+      navigate(frontRoutes.pages.HomePage.navigationPath);
     } catch (err) {
-      setErrorMessage(err?.message || t('registrationError'))
+      // можна або тут обробляти, або залишити як є
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
-      <input
-        value={displayName}
-        onChange={(e) => setDisplayName(e.target.value)}
-        placeholder={t('name')}
-        required
-        className="px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900 outline-none bg-gray-50 dark:bg-gray-800 text-base text-gray-900 dark:text-gray-100 transition"
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-4">
+      <Input
+        label={t("name")}
+        placeholder={t("name")}
+        {...register("displayName")}
+        error={errors.displayName?.message}
       />
-      <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder={t('eamil')}
-        required
+
+      <Input
+        label={t("email")}
         type="email"
-        className="px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900 outline-none bg-gray-50 dark:bg-gray-800 text-base text-gray-900 dark:text-gray-100 transition"
+        placeholder={t("email")}
+        {...register("email")}
+        error={errors.email?.message}
       />
-      <input
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder={t('pass')}
+
+      <Input
+        label={t("pass")}
         type="password"
-        required
-        className="px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:border-blue-400 dark:focus:ring-blue-900 outline-none bg-gray-50 dark:bg-gray-800 text-base text-gray-900 dark:text-gray-100 transition"
+        placeholder={t("pass")}
+        {...register("password")}
+        error={errors.password?.message}
       />
+
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold text-base shadow-md hover:from-blue-600 hover:to-indigo-600 dark:bg-gradient-to-r dark:from-blue-700 dark:to-indigo-800 dark:text-gray-100 transition disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold text-base shadow-md hover:from-blue-600 hover:to-indigo-600 transition disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {t('sign-up')}
+        {t("sign-up")}
       </button>
-      {(error || errorMessage) && (
-        <div className="text-red-500 dark:text-red-400 text-sm font-medium mt-1">
-          {errorMessage || error?.data?.message || t('error')}
-        </div>
-      )}
+
+      {(error || errors.root) && <div className="text-red-500 text-sm">{error?.data?.message || t("error")}</div>}
     </form>
-  )
+  );
 }
