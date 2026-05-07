@@ -3,6 +3,8 @@
 .header {
   background: var(--header-bg);
   @extend %header;
+  padding-top: env(safe-area-inset-top);
+  position: -webkit-sticky;
   // Розкоментувать для сайдбара по замовчанню
   // display: none;
   @media (max-width: toEm($custom-header-adaptive)) {
