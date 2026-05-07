@@ -50,7 +50,7 @@ export default function LoginForm() {
     <div className='defaultForm'>
       <form className='defaultForm__form' onSubmit={handleSubmit(onSubmit)}>
         <div className="defaultForm__inputsWrapper defaultForm__inputsWrapper--center">
-          <label className="defaultForm__label" htmlFor={emailId}>{t('eamil')}</label>
+          <label className="defaultForm__label" htmlFor={emailId}>{t('email')}</label>
           <Input className="defaultForm__fieldInput" style={{ maxWidth: '350px' }} id={emailId} type="email" placeholder={t("email")} {...register("email")} error={errors.email?.message}/>
         </div>
         <div className="defaultForm__inputsWrapper defaultForm__inputsWrapper--center">
