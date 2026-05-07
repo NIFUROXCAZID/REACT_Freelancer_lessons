@@ -1,0 +1,287 @@
+@use "./abstracts/index" as *;
+// КЛАСИ ЗАГАЛЬНОГО ПРИЗНАЧЕННЯ АБО ТІ ЩО ЧАСТО СПЛИВАЮТЬ НА РІЗНИХ СТОРІНКАХ
+// АКТИВНА СТОРІНКА-----------------------------------------------------------
+.current-page--1 {
+  background-color: var(--AlwaysBlack-text) !important;
+}
+.current-page--2 {
+  color: var(--button-color--4) !important;
+}
+// ТИПИ БЕКГРАУНДІВ-----------------------------------------------------------
+.common-page {
+  background: var(--main-bg);
+}
+.products-page {
+  background: var(--container-bg);
+}
+// КФС СИМВОЛ-----------------------------------------------------------
+.red_symbol {
+  display: flex;
+  justify-content: center;
+  margin-top: toRem(-65);
+  @include adaptiveValue("margin-bottom", 50, 6);
+  @media (max-width: toEm($huge-mobile-adaptive)) {
+    margin-top: toRem(-30);
+  }
+  &__red {
+    width: toRem(40);
+    height: toRem(60);
+    background-color: var(--header-bg);
+  }
+  &__grey {
+    width: toRem(40);
+    height: toRem(60);
+    background-color: var(--main-bg);
+  }
+}
+
+.h1_footer {
+  font-size: toRem(42);
+  font-weight: 700;
+  text-align: center;
+  @include adaptiveValue("margin-bottom", 50, 6);
+  @media (max-width: toEm($huge-mobile-adaptive)) {
+    font-size: toRem(28);
+  }
+}
+.containerBg {
+  background-color: var(--container-bg);
+  padding-top: toRem(35);
+  padding-bottom: toRem(35);
+  @include adaptiveValue("padding-left", 25, 6);
+  @include adaptiveValue("padding-right", 25, 6);
+  margin-top: toRem(30);
+  margin-bottom: toRem(30);
+  border-radius: $general-border-radius;
+}
+// Популярна кнопка для всякого
+.defaultButton {
+  @extend %default-font;
+  font-weight: 700;
+  font-size: toRem(18);
+  line-height: toRem(18);
+  padding: toRem(12) toRem(20);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  width: auto;
+  min-width: toRem(120);
+  max-width: 100%;
+  min-height: auto;
+  transition: 0.3s;
+  border-radius: $general-border-radius;
+  color: var(--AlwaysWhite-text);
+  background: var(--button-color--3);
+  // border: toRem(2) solid var(--AlwaysWhite-text);
+  & span {
+    position: relative;
+    z-index: 15;
+  }
+  &--img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: toRem(16);
+    background: var(--button-color--2);
+    padding: toRem(6) toRem(20);
+  }
+  &__popupShow {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    padding: toRem(10);
+    border-radius: toRem(20);
+    color: #000;
+    text-align: center;
+    transition: all 0.6s;
+    background-color: #fff;
+  }
+  &:hover {
+    color: var(--White-text);
+      background: var(--Black-text);
+  }
+}
+.defaultButton__popupShow.isVisible {
+  opacity: 1;
+  transform: translateY(-2em);
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.kfc_off_ref {
+  font-weight: 500;
+  color: var(--button-color--3);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: var(--button-color--6);
+  }
+}
+// Класичні стилі для форми
+.defaultForm {
+  // .messege__form
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @extend %default-text;
+  }
+  &__inputsWrapper {
+    max-width: toRem(800);
+    width: 100%;
+    @include adaptiveValue("margin-bottom", 20, 14);
+    &--center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  // .messege__label-email
+  &__label {
+    @extend %default-text;
+    font-weight: 500;
+    font-size: toRem(16);
+    margin-bottom: toRem(4);
+  }
+  // .messege__field-email
+  &__fieldInput {
+    @extend %default-font;
+    @include adaptiveValue("font-size", 20, 14);
+    font-weight: 400;
+    line-height: toRem(34);
+    color: var(--main-text);
+    width: 100%;
+    padding: toRem(5);
+    display: block;
+    border-radius: $general-border-radius;
+    background-color: var(--table-bg-2);
+    border: toRem(2) solid var(--main-text);
+    &::placeholder {
+      color: var(--placeholder-text);
+    }
+    &:focus {
+      outline: none !important;
+      box-shadow: inset 0 0 toRem(10) var(--button-color--3) !important;
+    }
+  }
+  &__select {
+    @extend %default-font;
+    @include adaptiveValue("font-size", 20, 14);
+    font-weight: 400;
+    line-height: toRem(34);
+    padding: toRem(5);
+    display: block;
+    border-radius: $general-border-radius;
+    color: var(--main-text);
+    background-color: var(--table-bg-2);
+    border: toRem(2) solid var(--main-text);
+    width: 100%;
+    &:focus {
+      outline: none !important;
+      box-shadow: inset 0 0 toRem(10) var(--button-color--3) !important;
+    }
+  }
+  // .messege__textarea
+  &__textarea {
+    @extend %default-font;
+    @include adaptiveValue("font-size", 20, 14);
+    font-weight: 400;
+    line-height: toRem(34);
+    padding: toRem(5);
+    width: 100%;
+    height: toRem(120);
+    border-radius: $general-border-radius;
+    color: var(--main-text);
+    background-color: var(--table-bg-2);
+    display: block;
+    border: toRem(2) solid var(--main-text);
+    &::placeholder {
+      color: var(--placeholder-text);
+    }
+    &:focus {
+      outline: none !important;
+      box-shadow: inset 0 0 toRem(10) var(--button-color--3) !important;
+    }
+  }
+  &__errorYup {
+    @extend %default-font;
+    font-size: toRem(14);
+    font-weight: 600;
+    color: var(--button-color--4);
+  }
+  &__sended {
+    @extend %default-font;
+    font-size: toRem(18);
+    font-weight: 600;
+    text-align: center;
+  }
+  &__btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: toRem(20);
+  }
+  // .messege__send
+  &__send {
+    @extend %default-font;
+    font-weight: 700;
+    font-size: toRem(18);
+    line-height: toRem(18);
+    padding: toRem(12) toRem(20);
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    width: auto;
+    min-width: toRem(120);
+    max-width: 100%;
+    min-height: auto;
+    transition: 0.3s;
+    border-radius: $general-border-radius;
+    color: var(--AlwaysWhite-text);
+    background: var(--button-color--3);
+    &--img {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: toRem(16);
+      background: var(--button-color--2);
+      padding: toRem(6) toRem(20);
+    }
+    & span {
+      position: relative;
+      z-index: 15;
+    }
+    &:hover {
+      color: var(--White-text);
+      background: var(--Black-text);
+    }
+  }
+}
+
+.errorBoundry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & p:not(:last-child) {
+    margin-bottom: toRem(15);
+  }
+  & button:not(:last-child) {
+    margin-bottom: toRem(15);
+  }
+}
