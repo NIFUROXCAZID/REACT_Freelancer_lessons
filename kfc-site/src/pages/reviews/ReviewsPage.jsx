@@ -1,4 +1,4 @@
-import ReviewsList from '../../widgets/reviews/ReviewsList'
+import ReviewsList from '@/widgets/Reviews/ReviewsList.jsx'
 import { useSelector } from 'react-redux'
 import { ErrorBoundary } from "react-error-boundary"
 import ReviewsErrorFallback from '@/shared/errorBoundries/ReviewsErrorFallback'
