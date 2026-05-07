@@ -1,0 +1,32 @@
+@use "/src/assets/styles/abstracts/index" as *;
+
+.starElement {
+  & svg {
+    width: toRem(50);
+    height: toRem(50);
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__starsWrap {
+    position: relative;
+    cursor: pointer;
+  }
+  &__leftSide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
+  &__rightSide {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,101 @@
+@use "/src/assets/styles/abstracts/index" as *;
+
+.reviewsActBtn {
+  & img {
+    width: toRem(44);
+    height: toRem(44);
+  }
+}
+//-СПИСОК-ВІДГУКІВ--------------------------------
+.reviews {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    @include adaptiveValue("gap", 15, 10);
+    @media (max-width: toEm($tablet-adaptive)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: toEm(660)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media (max-width: toEm($small-mobile-adaptive)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    margin-bottom: toRem(15);
+  }
+  &__item {
+    box-shadow: 0 toRem(5) toRem(13) rgb(50 50 40 / 30%);
+    max-width: toRem(420);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding: toRem(14);
+    border-radius: toRem(12);
+    background: var(--main-bg);
+  }
+  &__imgZone {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: toRem(12);
+    row-gap: toRem(12);
+    @extend %text-dots;
+    width: 100%;
+    @extend %default-font;
+    color: var(--Black-text);
+    font-weight: 700;
+    font-size: toRem(16);
+    line-height: toRem(17);
+    & p {
+      @extend %text-dots;
+    }
+    & img {
+      width: toRem(44);
+      height: toRem(44);
+      border-radius: 50%;
+      border: toRem(2) solid var(--placeholder-text);
+    }
+    & div {
+      width: toRem(44);
+      height: toRem(44);
+      border-radius: 50%;
+      font-size: toRem(40);
+      position: relative;
+      &::before {
+        @extend %abs-cent;
+      }
+    }
+  }
+  &__starsZone {
+    display: flex;
+    justify-content: center;
+    margin-top: toRem(8);
+  }
+  &__infoZone {
+    & h3 {
+      @extend %default-font;
+      font-weight: 500;
+      font-size: toRem(15);
+      color: var(--Black-text);
+    }
+    & p {
+      @extend %default-font;
+      font-weight: 400;
+      font-size: toRem(14);
+      color: var(--Black-text);
+    }
+  }
+  &__btnWrap {
+    padding-top: toRem(10);
+    margin-top: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: toRem(4);
+  }
+}

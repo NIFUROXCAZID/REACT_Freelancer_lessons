@@ -1,0 +1,91 @@
+@use "/src/assets/styles/abstracts/index" as *;
+// ----CONTENT---------------------------------------------------
+.content {
+  margin-top: toRem(0) !important;
+  margin-bottom: toRem(35);
+  & h2 {
+    @extend %abzats-line;
+    @extend %default-font;
+    font-size: toRem(30);
+    font-weight: 600;
+    line-height: toRem(26);
+    color: var(--main-text);
+    margin-bottom: toRem(15);
+  }
+  // .content__button
+  &__button {
+    @extend %default-font;
+    font-size: toRem(20);
+    font-weight: 600;
+    line-height: toRem(24);
+    padding: toRem(10) toRem(10);
+    color: var(--main-text);
+    border-radius: $general-border-radius;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.1);
+      color: var(--button-color--4);
+    }
+    @media (max-width: toEm($small-mobile-adaptive)) {
+      font-size: toRem(16);
+      line-height: toRem(20);
+      padding: toRem(8) toRem(8);
+    }
+  }
+  // .content__wrapper
+  &__wrapper {
+    background-color: var(--table-bg-2);
+    border: toRem(2) solid var(--main-text);
+    border-radius: $general-border-radius;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: toRem(-10);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+}
+.btnShow {
+  border: toRem(1) solid var(--main-text);
+  display: block;
+}
+.btnHidden {
+  border: toRem(1) solid var(--main-text);
+  display: none;
+}
+.menuShow {
+  max-height: 9000px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: toRem(15);
+  transition: 0.4s;
+}
+
+.listed {
+  margin-bottom: 0;
+  width: 100%;
+  columns: toRem(330) 2;
+
+  & li {
+    padding-left: 0;
+    margin-bottom: 0 !important;
+    &::before {
+      display: none !important;
+    }
+    & a {
+      @extend %default-font;
+      @include adaptiveValue("font-size", 20, 14);
+      font-weight: 400;
+      @include adaptiveValue("line-height", 24, 18);
+      color: var(--main-text);
+      padding: toRem(5) toRem(15);
+      display: inline-block;
+      transition: 0.3s;
+      &:hover {
+        color: var(--button-color--4);
+      }
+    }
+  }
+}

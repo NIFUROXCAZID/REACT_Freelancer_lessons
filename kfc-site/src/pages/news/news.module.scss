@@ -1,0 +1,111 @@
+@use "/src/assets/styles/abstracts/index" as *;
+
+.newsActBtn {
+  & img {
+    width: toRem(44);
+    height: toRem(44);
+  }
+}
+//-СПИСОК-НОВИН--------------------------------
+.news {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    @include adaptiveValue("gap", 15, 10);
+    @media (max-width: toEm($tablet-adaptive)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: toEm(660)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media (max-width: toEm($small-mobile-adaptive)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    margin-bottom: toRem(15);
+  }
+  &__item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    box-shadow: 0 toRem(5) toRem(13) rgb(50 50 40 / 30%);
+    max-width: toRem(420);
+    transition: 0.3s;
+    border-radius: toRem(12);
+    background: var(--White-text);
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+  &__title {
+    text-align: center;
+    padding: toRem(6);
+  }
+  &__imgWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    max-width: toRem(1140);
+  }
+  &__background {
+  }
+  &__newsImage {
+    @include adaptive-image-settings(
+      $width: 100%,
+      $height: auto,
+      $object-fit: cover,
+      $aspect-ratio: toRem(384) / toRem(224)
+    );
+  }
+  &__infoZone {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    transition: 0.3s;
+    z-index: 5;
+    margin-top: toRem(0);
+    @include adaptiveValue("padding", 15, 8);
+    & h3 {
+      @extend %default-font;
+      font-weight: 700;
+      @include adaptiveValue("font-size", 20, 16);
+      text-transform: uppercase;
+      color: var(--button-color--4);
+      text-align: left;
+      padding: 0;
+    }
+  }
+  &__btnWrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: toRem(4);
+    & button {
+      & img {
+        width: toRem(44);
+        height: toRem(44);
+      }
+    }
+  }
+  // .news__button
+  &__ref {
+    @extend %default-font;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 18, 14);
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--button-color--4);
+    transition: 0.3s;
+    margin-top: auto;
+    &:hover {
+      color: var(--button-color--6);
+    }
+  }
+}

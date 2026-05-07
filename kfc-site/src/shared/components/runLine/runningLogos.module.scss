@@ -1,0 +1,53 @@
+@use "/src/assets/styles/abstracts/index" as *;
+
+//-ПЛАВАЮЧА-ЛІНІЯ З ЛОГОТИПАМИ--------------------------------
+.logos {
+  padding: toRem(24) 0;
+  background: var(--AlwaysBlack-text);
+  overflow: hidden;
+  white-space: nowrap;
+
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  &::before {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: toRem(250);
+    height: 100%;
+    content: "";
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: toRem(250);
+    height: 100%;
+    content: "";
+  }
+  &__slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+    & img {
+      height: toRem(150);
+      width: toRem(200);
+      margin: 0 toRem(33);
+      @media (max-width: toEm($huge-mobile-adaptive)) {
+        height: toRem(75);
+        width: toRem(100);
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+

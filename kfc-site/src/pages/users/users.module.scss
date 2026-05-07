@@ -1,0 +1,44 @@
+@use "/src/assets/styles/abstracts/index" as *;
+
+.userPhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--button-color--5);
+  & img {
+    width: toRem(44);
+    height: toRem(44);
+    border: toRem(2) solid var(--button-color--5);
+    border-radius: 50%;
+  }
+  & div {
+    border-radius: 50%;
+    width: toRem(44);
+    height: toRem(44);
+    font-size: toRem(40);
+    position: relative;
+    &::before {
+      @extend %abs-cent;
+    }
+  }
+}
+
+.editButtonsWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: toRem(8);
+}
+
+.userEditBtn {
+  & img {
+    width: toRem(34);
+    height: toRem(34);
+  }
+}
+.userDeleteBtn {
+  & img {
+    width: toRem(34);
+    height: toRem(34);
+  }
+}
