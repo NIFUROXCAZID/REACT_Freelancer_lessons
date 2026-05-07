@@ -1,7 +1,11 @@
 @use "/src/assets/styles/abstracts/index" as *;
 
 .wrapper {
+    // ДЛЯ АЙФОНІВ
     min-height: 100vh;
+    min-height: 100dvh;
+    min-height: 100svh;
+    
     overflow: clip;
     display: flex;
     flex-direction: column;
