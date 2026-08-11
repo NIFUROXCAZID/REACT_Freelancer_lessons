@@ -1,12 +1,496 @@
-# React + Vite
+KFC — REACT FULLSTACK SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Навчальний вебзастосунок у стилі KFC, створений для практики сучасної frontend-розробки на React.
 
-Currently, two official plugins are available:
+Проєкт являє собою SPA-застосунок із системою авторизації, ролями користувачів, каталогом товарів, кошиком, улюбленими товарами, реакціями, відгуками, мультимовністю, темами оформлення та інтерактивною картою ресторанів.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Основна мета проєкту — практично закріпити роботу з React, Firebase, Redux Toolkit, RTK Query, маршрутизацією, формами, авторизацією та архітектурою Feature-Sliced Design.
 
-## Expanding the ESLint configuration
+1. ОСНОВНІ МОЖЛИВОСТІ
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+У застосунку реалізовано:
+
+* авторизацію та реєстрацію користувачів;
+* Firebase Authentication;
+* авторизацію через email та пароль;
+* Google Login;
+* збереження авторизаційної сесії;
+* розмежування доступу за ролями;
+* захищені маршрути;
+* каталог продуктів;
+* перегляд деталей продукту;
+* фільтрацію та сортування;
+* систему улюблених товарів;
+* likes / dislikes;
+* кошик покупок;
+* зміну кількості товарів у кошику;
+* відгуки та рейтинги;
+* мультимовність;
+* Dark / Light Theme;
+* інтерактивну карту ресторанів;
+* lazy loading сторінок;
+* Error Boundaries;
+* optimistic updates;
+* синхронізацію RTK Query cache;
+* адаптивний дизайн;
+* компонентні тести.
+
+2. РОЛІ КОРИСТУВАЧІВ
+
+У системі реалізовано чотири ролі:
+
+ADMIN
+MANAGER
+USER
+GUEST
+
+Роль користувача впливає на доступні сторінки та можливості застосунку.
+
+ADMIN
+
+Має розширений доступ до керування системою та продуктами.
+
+MANAGER
+
+Має доступ до керування контентом та частини адміністративних можливостей.
+
+USER
+
+Звичайний авторизований користувач.
+
+Може:
+
+* переглядати товари;
+* додавати товари до кошика;
+* додавати товари в улюблені;
+* залишати реакції;
+* працювати з відгуками;
+* користуватися персоналізованими можливостями застосунку.
+
+GUEST
+
+Обмежений користувач із базовим доступом до функціональності застосунку.
+
+3. ТЕСТОВІ ОБЛІКОВІ ЗАПИСИ
+
+Пароль для всіх тестових користувачів:
+
+123456
+
+ADMIN
+
+Email:
+[admin@gmail.com](mailto:admin@gmail.com)
+
+Password:
+123456
+
+MANAGER
+
+Email:
+[manager@gmail.com](mailto:manager@gmail.com)
+
+Password:
+123456
+
+USER
+
+Email:
+[user@gmail.com](mailto:user@gmail.com)
+
+Password:
+123456
+
+GUEST
+
+Email:
+[guest@gmail.com](mailto:guest@gmail.com)
+
+Password:
+123456
+
+4. ТЕХНОЛОГІЇ
+
+Основний стек:
+
+* React 19;
+* JavaScript;
+* Vite;
+* React Router;
+* Redux Toolkit;
+* RTK Query;
+* Firebase Authentication;
+* Firebase Firestore;
+* React Hook Form;
+* Yup;
+* i18next;
+* Leaflet;
+* SCSS Modules;
+* clsx;
+* Vitest;
+* React Testing Library.
+
+5. АРХІТЕКТУРА
+
+Проєкт організований за принципами Feature-Sliced Design.
+
+Основні шари:
+
+app
+pages
+widgets
+features
+entities
+shared
+
+Приклад структури:
+
+src/
+app/
+pages/
+widgets/
+features/
+entities/
+shared/
+
+Такий підхід дозволяє розділяти бізнес-логіку, UI-компоненти, сутності та загальні модулі застосунку.
+
+6. STATE MANAGEMENT
+
+Для керування глобальним станом використовується Redux Toolkit.
+
+Для роботи з асинхронними даними та кешуванням використовується RTK Query.
+
+У застосунку реалізовано:
+
+* кешування серверних даних;
+* invalidation tags;
+* optimistic updates;
+* автоматичне оновлення даних;
+* синхронізацію кешу після змін;
+* повторне використання API-логіки між компонентами.
+
+7. OPTIMISTIC UPDATES
+
+Для деяких дій інтерфейс оновлюється ще до отримання остаточної відповіді від Firebase.
+
+Це використовується, зокрема, для:
+
+* likes;
+* dislikes;
+* favorites;
+* деяких операцій із кошиком.
+
+Такий підхід робить інтерфейс швидшим і більш плавним для користувача.
+
+8. FIREBASE AUTHENTICATION
+
+Для авторизації використовується Firebase Authentication.
+
+Підтримуються:
+
+* реєстрація;
+* login через email і пароль;
+* Google Login;
+* logout;
+* session persistence;
+* отримання поточного користувача.
+
+Після авторизації застосунок визначає роль користувача та використовує її для перевірки доступу.
+
+9. FIRESTORE
+
+Firebase Firestore використовується як база даних застосунку.
+
+У Firestore зберігаються:
+
+* користувачі;
+* продукти;
+* кошики;
+* reactions;
+* favorites;
+* reviews.
+
+10. ПРОДУКТИ
+
+Продукти можуть містити:
+
+* назву;
+* опис;
+* ціну;
+* зображення;
+* категорію;
+* кількість likes;
+* кількість dislikes.
+
+Приклади категорій:
+
+* menu;
+* burger;
+* chicken;
+* wings;
+* strips;
+* nuggets;
+* potato;
+* sauce;
+* drink.
+
+11. ФІЛЬТРАЦІЯ ТА СОРТУВАННЯ
+
+Каталог дозволяє:
+
+* фільтрувати товари;
+* працювати з категоріями;
+* показувати лише улюблені товари;
+* сортувати товари;
+* виводити улюблені товари першими.
+
+12. FAVORITES
+
+Користувач може додавати товари до списку улюблених.
+
+Для favorites використовується зв'язок між:
+
+productId
+userId
+
+Це дозволяє кожному користувачу мати власний список обраних товарів.
+
+13. LIKES І DISLIKES
+
+Для продуктів реалізовано систему реакцій:
+
+* like;
+* dislike.
+
+Реакція прив'язується до конкретного користувача та продукту.
+
+Лічильники реакцій оновлюються з використанням optimistic updates.
+
+14. SHOPPING CART
+
+Авторизований користувач має власний кошик.
+
+У кошику можна:
+
+* додавати товари;
+* збільшувати кількість;
+* змінювати кількість;
+* видаляти товари;
+* переглядати загальну суму.
+
+15. REVIEWS
+
+Для продуктів реалізована система відгуків.
+
+Відгук містить:
+
+* userId;
+* userName;
+* userAvatar;
+* title;
+* text;
+* rating.
+
+Редагувати або видаляти відгук може його автор або користувач із відповідними адміністративними правами.
+
+16. ФОРМИ
+
+Для роботи з формами використовується:
+
+React Hook Form
+
+Для валідації:
+
+Yup
+
+Форми використовуються для:
+
+* login;
+* registration;
+* створення продуктів;
+* редагування продуктів;
+* відгуків;
+* інших користувацьких дій.
+
+17. ROUTING
+
+Для маршрутизації використовується React Router.
+
+У застосунку реалізовано:
+
+* вкладені маршрути;
+* protected routes;
+* role-based routes;
+* loaders;
+* redirect logic;
+* lazy loading сторінок.
+
+18. AUTH GUARDS
+
+Перед відкриттям захищеної сторінки застосунок перевіряє:
+
+* чи авторизований користувач;
+* його роль;
+* чи має він право відкривати маршрут.
+
+Для маршрутів можна задавати вимоги:
+
+requireAuth
+roles
+
+19. МУЛЬТИМОВНІСТЬ
+
+Для локалізації використовується i18next.
+
+Застосунок підтримує декілька мов інтерфейсу.
+
+Основні переклади винесені в окремі translation-файли.
+
+20. DARK / LIGHT THEME
+
+У застосунку реалізовано перемикання між:
+
+Light Theme
+Dark Theme
+
+Тема впливає на основні елементи інтерфейсу та стилі компонентів.
+
+21. КАРТА РЕСТОРАНІВ
+
+Для інтерактивної карти використовується Leaflet.
+
+На карті відображаються маркери ресторанів.
+
+Користувач може переглядати їх розташування без переходу до сторонніх картографічних сервісів.
+
+22. СТИЛІ
+
+Для стилізації використовується:
+
+* SCSS;
+* CSS Modules;
+* clsx;
+* icon font.
+
+CSS Modules дозволяють ізолювати стилі компонентів та уникати конфліктів назв класів.
+
+23. ICON FONT
+
+Для частини іконок використовується власна icon font система.
+
+Це дозволяє використовувати масштабовані векторні іконки через CSS.
+
+24. ADAPTIVE DESIGN
+
+Інтерфейс адаптований для різних розмірів екрана.
+
+Підтримується responsive layout включно з вузькими мобільними екранами приблизно від 320px.
+
+25. LAZY LOADING
+
+Частина сторінок завантажується через lazy loading.
+
+Це дозволяє не включати весь код застосунку в початковий JavaScript bundle та скорочує обсяг початкового завантаження.
+
+26. ERROR BOUNDARIES
+
+Для критичних помилок React-компонентів використовуються Error Boundaries.
+
+У випадку помилки користувач отримує fallback UI замість повного падіння застосунку.
+
+27. ТЕСТУВАННЯ
+
+Для тестування використовується:
+
+* Vitest;
+* React Testing Library;
+* jsdom.
+
+Тестуються окремі компоненти та сценарії користувацької взаємодії.
+
+Для маршрутизованих компонентів використовується MemoryRouter.
+
+28. ЛОКАЛЬНИЙ ЗАПУСК
+
+Встановити залежності:
+
+npm install
+
+Створити .env з необхідними Firebase-змінними.
+
+Приклад:
+
+VITE_FIREBASE_API_KEY=...
+VITE_FIREBASE_AUTH_DOMAIN=...
+VITE_FIREBASE_PROJECT_ID=...
+VITE_FIREBASE_STORAGE_BUCKET=...
+VITE_FIREBASE_MESSAGING_SENDER_ID=...
+VITE_FIREBASE_APP_ID=...
+
+Запустити development-сервер:
+
+npm run dev
+
+29. PRODUCTION BUILD
+
+Створити production-збірку:
+
+npm run build
+
+Перевірити її локально:
+
+npm run preview
+
+30. ТЕСТИ
+
+Запуск тестів:
+
+npm run test
+
+або відповідною командою, визначеною в package.json.
+
+31. DEPLOYMENT
+
+Frontend може бути розгорнутий на Netlify.
+
+Firebase використовується для:
+
+* Authentication;
+* Firestore;
+* зберігання даних застосунку.
+
+Для production-версії Firebase environment variables задаються через налаштування хостингу.
+
+32. МЕТА ПРОЄКТУ
+
+Проєкт створений для практичного вивчення сучасної React-розробки.
+
+Під час роботи над застосунком практикувалися:
+
+* React 19;
+* SPA architecture;
+* Feature-Sliced Design;
+* Redux Toolkit;
+* RTK Query;
+* Firebase Authentication;
+* Firestore;
+* role-based access;
+* protected routes;
+* optimistic updates;
+* forms;
+* validation;
+* localization;
+* responsive design;
+* maps;
+* testing;
+* component architecture;
+* deployment.
+
+33. ПРО ПРОЄКТ
+
+KFC SPA є навчальним portfolio-проєктом, створеним для відпрацювання складнішої frontend-архітектури та взаємодії з Firebase.
+
+Проєкт демонструє побудову великого React-застосунку з авторизацією, ролями, глобальним станом, кешуванням, формами, користувацькими даними, інтерактивними компонентами та адаптивним інтерфейсом.
+
+Застосунок не є офіційним продуктом KFC і створений виключно з навчальною та демонстраційною метою.
